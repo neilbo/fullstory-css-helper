@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>FullStory CSS Selector Helper</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="title-wrapper">
+    <h2 class="title"><span>fullstory</span> CSS selector helper</h2>
+    <h4 class="subtitle">Converts HTML class names to CSS selectors</h4>
+  </div>
+  <div class="container">
+    <label for="input">HTML class names</label>
+    <form id="convertForm">
+      <input type="text" id="input" placeholder="class1 class2 class3" required autofocus/>
+      <div class="button-wrapper">
+        <button id="convertForm" type="submit" title="Convert to CSS">Convert to CSS</button>
+      </div>
+    </form>
+    <div class="results-wrapper" hidden>
+      <div class="wrapper">
+        <div class="close-wrapper">
+          <a id="clearForm" href="#" title="Start over">
+            <svg id="refresh-icon" width="70" height="78" viewBox="0 0 70 78" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M65.3 25.4995L56.6 30.4995C58.8 34.1995 60 38.4995 60 42.9995C60 56.7995 48.8 67.9995 35 67.9995C21.2 67.9995 10 56.7995 10 42.9995C10 29.6995 20.4 18.7995 33.5 17.9995C33.5 18.9995 33.5 19.9995 33.5 20.9995V23.6995C33.5 25.8995 35.1 26.7995 37 25.6995L42.4 22.5995C44.3 21.4995 47.4 19.6995 49.3 18.5995L54.7 15.4995C56.6 14.3995 56.6 12.5995 54.7 11.4995L49.3 8.39954C47.4 7.29954 44.3 5.49954 42.4 4.39954L37 1.39954C35.1 0.299535 33.5 1.09954 33.5 3.19954C33.5 4.59954 33.5 6.39954 33.5 7.99954C14.9 8.79954 0 24.1995 0 42.9995C0 62.2995 15.7 77.9995 35 77.9995C54.3 77.9995 70 62.2995 70 42.9995C70 36.5995 68.3 30.6995 65.3 25.4995Z"
+                fill="#F65C8C" />
+            </svg>
+          </a>
+        </div>
+        <pre id="result"></pre>
+      </div>
+      <div class="button-wrapper">
+        <button id="copyToClipboard" title="Copy to Clipboard">Copy to clipboard</button>
+      </div>
+
+    </div>
+    <p id="toast" hidden>Copied!</p>
+  </div>
+  <footer class="vibrant">
+    <p><a class="donate-link" href="https://www.paypal.com/donate?business=GJ4FFJ8SSGLTC&no_recurring=0&currency_code=USD" target="_blank" title="Donate a coffee"> ☕️ Donate a coffee ☕️ </a></p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

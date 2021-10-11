@@ -1,0 +1,218 @@
+
+html {
+  height: auto;
+  display: grid;
+  font-size: medium;
+  font-family: "Lato", sans-serif;
+  background-color: #f9f9f9;
+  color: #3a4b59;
+  min-width: 320px;
+  padding: 0px 16px 16px 0;
+}
+
+body {
+  min-width: 320px;
+}
+
+.title-wrapper {
+  text-align: center;
+}
+
+.title {
+  margin: 8px 0 16px 0;
+}
+.title span{
+  color: black;
+}
+.subtitle {
+  margin: 16px 0 8px 0;
+}
+
+.container {
+  margin: 16px auto;
+  border-radius: 4px;
+  background-color: white;
+  padding: 16px;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 10%);
+  min-width: 200px;
+}
+
+input#input {
+  margin: 8px 0;
+  padding: 8px 0 8px 4px;
+  width: 98%;
+  background-color: white;
+  border-style: solid;
+  border-radius: 4px;
+  border-color: #c6c6c6;
+}
+
+input#input:focus-visible {
+  border-color: #f65c8c;
+  outline: #f65c8c;
+}
+
+.button-wrapper {
+  text-align: end;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button#copyToClipboard {
+  -webkit-font-smoothing: antialiased;
+  height: 32px;
+  padding: 0 8px;
+  background: #f65c8c;
+  border: #f65c8c;
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+button#convertForm {
+  -webkit-font-smoothing: antialiased;
+  height: 32px;
+  padding: 0 8px;
+  background-color: transparent;
+  color: #f65c8c;
+  border: 1px #f65c8c solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+button#convertForm:hover {
+  background-color: #f65c8c;
+  color: white;
+  border: 1px #f65c8c solid;
+}
+
+button#donate {
+  /* Secondary styling */
+  -webkit-font-smoothing: antialiased;
+  height: 32px;
+  padding: 0 8px;
+  background-color: transparent;
+  color: #f65c8c;
+  border: 1px #f65c8c solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+#copyToClipboard:hover {
+  cursor: pointer;
+}
+
+#refresh-icon {
+  height: 16px;
+  width: 16px;
+}
+
+#clearForm {
+  color: #f65c8c;
+}
+
+.wrapper {
+  background-color: #e4e8eb;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.close-wrapper {
+  text-align: end;
+}
+
+#result {
+  font-size: 1.2rem;
+}
+
+pre {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+#toast {
+  padding: 8px;
+  margin: 8px 0;
+  background-color: #616e81;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.fade-away {
+  -moz-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 2s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 2s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    /* reset padding + margin */
+    padding: 0;
+    margin: 0;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+footer {
+  padding: 8px 16px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 10%);
+  font-weight: 600;
+}
+
+/* unvisited link */
+a.donate-link:link {
+  color: white;
+}
+
+/* visited link */
+a.donate-link:visited {
+  color: white;
+}
+
+/* mouse over link */
+a.donate-link:hover {
+  color: white;
+}
+
+/* selected link */
+a.donate-link:active {
+  color: white;
+}
+
+footer.vibrant {
+  padding: 4px 8px;
+  background-color: #f65c8c;
+  color: white;
+}
