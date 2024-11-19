@@ -24,36 +24,44 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   function convertToCSS() {
-    let htmlClasses = document.querySelector("#input").value;
-    let putDotsInfrontOfEachWord = htmlClasses.trim().replace(/(^|\s+)/g, "$1.").trim();
-    let removeSpaces = putDotsInfrontOfEachWord.replace(/\s/g, "")
-    document.querySelector("#result").innerHTML = removeSpaces;
+    const htmlClasses = document.querySelector("#input").value;
+    const cssSelector = htmlClasses
+      .trim()
+      .split(/\s+/)
+      .map(cls => `.${cls}`)
+      .join('');
+    
+    document.querySelector("#result").innerHTML = cssSelector;
     document.querySelector(".results-wrapper").removeAttribute("hidden");
   }
 
   function resetForm() {
-    let form = document.getElementById("convertForm");
+    const form = document.getElementById("convertForm");
     form.reset();
-    input.autofocus;
-    document.querySelector("#result").innerHTML = "";
-    document.querySelector(".results-wrapper").setAttribute("hidden", true);
-    document.querySelector("#toast").setAttribute("hidden", true);
+    input.focus();
+    
+    const elements = ["#result", ".results-wrapper", "#toast"];
+    elements.forEach(selector => {
+      const element = document.querySelector(selector);
+      element.innerHTML = selector === "#result" ? "" : null;
+      element.hidden = true;
+    });
   }
 
   let copyToClipboardButton = document.getElementById("copyToClipboard");
-  copyToClipboardButton.addEventListener("click", () => {
-    // remove fade-away class to start
-    document.querySelector("#toast").classList.remove("fade-away");
-    // Copy To Clipboard
-    let string = document.querySelector("#result").innerHTML;
-    const el = document.createElement("textarea");
-    el.value = string;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand("copy");
-    document.body.removeChild(el);
-    // Notify user that it was copied
-    document.querySelector("#toast").removeAttribute("hidden");
-    document.querySelector("#toast").classList.add("fade-away");
-  });
+  copyToClipboardButton.addEventListener("click", copyToClipboard);
+
+  async function copyToClipboard() {
+    const toast = document.querySelector("#toast");
+    toast.classList.remove("fade-away");
+    
+    const text = document.querySelector("#result").innerHTML;
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.hidden = false;
+      toast.classList.add("fade-away");
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  }
 });
