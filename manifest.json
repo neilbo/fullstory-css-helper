@@ -1,5 +1,5 @@
 {
-    "manifest_version":2,
+    "manifest_version": 3,
     "name": "FullStory CSS Selector Helper",
     "description": "Converts HTML class names to CSS selectors",
     "version": "0.0.2",
@@ -8,7 +8,7 @@
         "48": "icon48.png",
        "128": "icon128.png" 
     },
-    "browser_action": {
+    "action": {
         "default_icon": {
             "16": "icon16.png",
             "48": "icon48.png",
